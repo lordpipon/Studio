@@ -323,7 +323,7 @@ export default function Home() {
 
       <Reveal className="pb-24">
         <Card className="overflow-hidden">
-          <CardHeader className="items-center gap-3 px-8 py-12 text-center">
+          <CardHeader className="justify-items-center gap-3 px-8 py-12 text-center">
             <div className="flex size-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <Clock className="size-6" />
             </div>
