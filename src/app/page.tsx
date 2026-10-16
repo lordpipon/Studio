@@ -2,17 +2,21 @@ import Link from "next/link"
 import {
   ArrowRight,
   ArrowUpRight,
+  Banknote,
   Boxes,
   Check,
   Clock,
+  CreditCard,
   Gauge,
   HeartHandshake,
   MessageCircle,
   Palette,
   Rocket,
   Server,
+  ShieldCheck,
   Sparkles,
   Star,
+  Wallet,
   Wrench,
   Zap,
 } from "lucide-react"
@@ -319,6 +323,37 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={300}>
+          <div className="flex flex-col items-center gap-6 rounded-xl border border-border/60 bg-muted/30 px-6 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="flex flex-col items-center gap-3 sm:flex-row">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <ShieldCheck className="size-5" />
+              </div>
+              <div>
+                <p className="font-medium">Pay however you like</p>
+                <p className="text-sm text-muted-foreground">
+                  Payment goes through Ko-fi, PayPal or Stripe — whatever is
+                  easiest for you.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <Badge variant="outline">
+                <CreditCard className="size-3" />
+                Ko-fi
+              </Badge>
+              <Badge variant="outline">
+                <Wallet className="size-3" />
+                PayPal
+              </Badge>
+              <Badge variant="outline">
+                <Banknote className="size-3" />
+                Stripe
+              </Badge>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <Reveal className="pb-24">
