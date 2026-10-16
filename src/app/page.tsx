@@ -32,6 +32,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Reveal } from "@/components/reveal"
+import { siteConfig } from "@/lib/site"
 
 const highlights = [
   { icon: Zap, label: "Fast turnaround" },
@@ -130,8 +131,70 @@ const steps = [
 ]
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "LordPipon's Studio",
+    url: siteConfig.url,
+    image: `${siteConfig.url}/icon.png`,
+    description: siteConfig.description,
+    founder: {
+      "@type": "Person",
+      name: "LordPipon",
+      url: siteConfig.portfolio,
+      sameAs: [siteConfig.portfolio],
+    },
+    areaServed: "Worldwide",
+    knowsAbout: ["Minecraft servers", "Discord communities", "Web development"],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Discord Community Setup",
+          description:
+            "A nice, organized Discord community with roles, channels and bots.",
+        },
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          minPrice: 1,
+          maxPrice: 2,
+          priceCurrency: "EUR",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Minecraft Server Setup",
+          description:
+            "Full Minecraft server setup and configuration done the way you want it.",
+        },
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          minPrice: 3,
+          maxPrice: 6,
+          priceCurrency: "EUR",
+        },
+      },
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: siteConfig.email,
+      contactType: "customer service",
+      url: `${siteConfig.url}/contact`,
+    },
+  }
+
   return (
-    <div className="relative mx-auto w-full max-w-5xl flex-1 px-6">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="relative mx-auto w-full max-w-5xl flex-1 px-6">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-24 left-1/2 -z-10 size-[32rem] -translate-x-1/2 rounded-full bg-foreground/10 blur-3xl animate-glow"
@@ -390,6 +453,7 @@ export default function Home() {
           </CardHeader>
         </Card>
       </Reveal>
-    </div>
+      </div>
+    </>
   )
 }

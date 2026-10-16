@@ -13,8 +13,12 @@ import { CopyButton } from "@/components/copy-button"
 import { Reveal } from "@/components/reveal"
 
 export const metadata: Metadata = {
-  title: "Get In Touch — LordPipon",
-  description: "Reach out by email, phone, Discord or socials.",
+  title: "Get In Touch",
+  description:
+    "Reach out to build your Minecraft server or Discord community — by email, phone, Discord or socials.",
+  alternates: {
+    canonical: "/contact",
+  },
 }
 
 const EMAIL = "lordpipon@gmail.com"
