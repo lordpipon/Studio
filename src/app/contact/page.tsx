@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 const EMAIL = "lordpipon@gmail.com"
 const ALT_EMAIL = "lordpipon@icloud.com"
 const DISCORD = "piponidlo"
+const DISCORD_ID = "994655331131072662"
 const TELEGRAM = "lordpipon"
 const INSTAGRAM = "piponidlo"
 const TIKTOK = "lordpipon"
@@ -95,7 +96,17 @@ export default function ContactPage() {
               </div>
               <CardTitle>Discord</CardTitle>
               <CardDescription>@{DISCORD}</CardDescription>
-              <div className="pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
+                <Button asChild size="sm">
+                  <a
+                    href={`https://discord.com/users/${DISCORD_ID}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Add me on Discord
+                    <ArrowUpRight data-icon="inline-end" />
+                  </a>
+                </Button>
                 <CopyButton value={DISCORD} label="Copy Discord" />
               </div>
             </CardHeader>
