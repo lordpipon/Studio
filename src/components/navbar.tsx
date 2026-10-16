@@ -12,16 +12,16 @@ export function Navbar() {
           href="/"
           className="text-base font-semibold tracking-tight transition-colors hover:text-muted-foreground"
         >
-          Studio
+          LordPipon&apos;s Studio
         </Link>
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <Button asChild>
             <Link href="/contact">
               <MessageCircle data-icon="inline-start" />
               Get In Touch
             </Link>
           </Button>
+          <ThemeToggle />
         </div>
       </div>
     </header>

@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { CopyButton } from "@/components/copy-button"
+import { Reveal } from "@/components/reveal"
 
 export const metadata: Metadata = {
   title: "Get In Touch — LordPipon",
@@ -29,7 +30,7 @@ export default function ContactPage() {
         </Link>
       </Button>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex animate-fade-up flex-col gap-3">
         <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
           Get In Touch
         </h1>
@@ -40,37 +41,41 @@ export default function ContactPage() {
       </section>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Mail className="size-5" />
-            </div>
-            <CardTitle>Email</CardTitle>
-            <CardDescription className="break-all">{EMAIL}</CardDescription>
-            <div className="flex flex-wrap gap-2 pt-2">
-              <Button asChild size="sm">
-                <a href={`mailto:${EMAIL}`}>
-                  Send an email
-                  <ArrowUpRight data-icon="inline-end" />
-                </a>
-              </Button>
-              <CopyButton value={EMAIL} label="Copy email" />
-            </div>
-          </CardHeader>
-        </Card>
+        <Reveal>
+          <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:ring-foreground/25">
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <Mail className="size-5" />
+              </div>
+              <CardTitle>Email</CardTitle>
+              <CardDescription className="break-all">{EMAIL}</CardDescription>
+              <div className="flex flex-wrap gap-2 pt-2">
+                <Button asChild size="sm">
+                  <a href={`mailto:${EMAIL}`}>
+                    Send an email
+                    <ArrowUpRight data-icon="inline-end" />
+                  </a>
+                </Button>
+                <CopyButton value={EMAIL} label="Copy email" />
+              </div>
+            </CardHeader>
+          </Card>
+        </Reveal>
 
-        <Card>
-          <CardHeader>
-            <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <DiscordIcon className="size-5" />
-            </div>
-            <CardTitle>Discord</CardTitle>
-            <CardDescription>{DISCORD}</CardDescription>
-            <div className="pt-2">
-              <CopyButton value={DISCORD} label="Copy Discord" />
-            </div>
-          </CardHeader>
-        </Card>
+        <Reveal delay={100}>
+          <Card className="h-full transition-all duration-300 hover:-translate-y-1 hover:ring-foreground/25">
+            <CardHeader>
+              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <DiscordIcon className="size-5" />
+              </div>
+              <CardTitle>Discord</CardTitle>
+              <CardDescription>{DISCORD}</CardDescription>
+              <div className="pt-2">
+                <CopyButton value={DISCORD} label="Copy Discord" />
+              </div>
+            </CardHeader>
+          </Card>
+        </Reveal>
       </div>
     </div>
   )
