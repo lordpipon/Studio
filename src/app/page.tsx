@@ -69,7 +69,7 @@ const services = [
 const plans = [
   {
     name: "Discord Community",
-    price: "€2–€3",
+    price: "€1–€2",
     tagline: "A nice Discord community for your friends and your people.",
     icon: MessageCircle,
     featured: false,
@@ -82,8 +82,8 @@ const plans = [
   },
   {
     name: "Minecraft Server",
-    price: "€5–€8",
-    tagline: "Full setup of everything you want — you tell me, I build it.",
+    price: "€3–€6",
+    tagline: "Setup of everything you want — the price depends on how good you want it.",
     icon: Server,
     featured: true,
     features: [
